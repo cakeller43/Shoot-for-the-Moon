@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Randomizer : MonoBehaviour
+public class RandomPlacer : MonoBehaviour
 {
 	public float range;
 	

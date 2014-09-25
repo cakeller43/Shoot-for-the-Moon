@@ -26,6 +26,7 @@ public class Movement : MonoBehaviour
 		if (gate)
 		{
 			move = initial;
+			gate = false;
 		}
 		else
 		{
