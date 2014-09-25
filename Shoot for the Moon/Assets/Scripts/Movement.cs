@@ -3,17 +3,34 @@ using System.Collections;
 
 public class Movement : MonoBehaviour
 {
+	// Vector controlling how fast the ship moves
 	public Vector3 move;
-    
-    private Vector3 initial;
+	// How much the ship is slowed down over time
+	public float gravity;
+	// Gravity is multiplied by this factor every new level
+	public float difficultyStep;
+	// Whether the ship has just passed through a gate
+	[System.NonSerialized]
+	public bool gate = false;
 	
-    void Start()
-    {
-        initial = move;
-    }
-    
+	private Vector3 initial;
+	
+	void Start()
+	{
+		move = move * Time.fixedDeltaTime;
+		initial = move;
+	}
+	
 	void FixedUpdate()
 	{
-		move = initial * Time.deltaTime;
+		if (gate)
+		{
+			move = initial;
+		}
+		else
+		{
+			float smooth = (1 / (move.z * gravity)) * Time.deltaTime;
+			move = Vector3.Slerp(move, Vector3.zero , smooth);
+		}
 	}
 }
