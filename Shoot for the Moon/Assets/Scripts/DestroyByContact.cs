@@ -5,10 +5,14 @@ public class DestroyByContact : MonoBehaviour
 {
 	void OnTriggerEnter(Collider other) 
 	{
-		if (other.tag == "Boundary")
-			return;
-		
-		other.gameObject.active = false;
-		gameObject.active = false;
+		if (other.tag == "Player")
+		{
+			other.gameObject.SetActive(false);
+			gameObject.SetActive(false);
+		}
+		else if (other.tag == "Gate")
+		{
+			Destroy(gameObject);
+		}
 	}
 }

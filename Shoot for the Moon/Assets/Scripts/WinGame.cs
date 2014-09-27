@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Accelerator : MonoBehaviour
+public class WinGame : MonoBehaviour
 {
 	private Movement movement;
 	
@@ -12,7 +12,7 @@ public class Accelerator : MonoBehaviour
 	
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.gameObject.tag == "Player")
-			movement.gate = true;
+		if (other.tag == "Player")
+			movement.move = Vector3.zero;
 	}
 }

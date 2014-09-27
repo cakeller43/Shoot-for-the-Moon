@@ -7,7 +7,8 @@ public class RandomPlacer : MonoBehaviour
 	
 	void Start()
 	{
-		Vector3 position = new Vector3(Random.Range(-range, range),
+		float random = Random.Range(-range, range);
+		Vector3 position = new Vector3(random,
 		                               transform.position.y,
 		                               transform.position.z);
 		transform.position = position;
