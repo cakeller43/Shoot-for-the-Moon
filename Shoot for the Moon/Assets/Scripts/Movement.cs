@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Movement : MonoBehaviour
 {
+	// Float determining factor of speed penalty
+	public float speedPenalty;
 	// Vector controlling how fast the ship moves
 	public Vector3 move;
 	// How much the ship is slowed down over time
@@ -33,5 +35,10 @@ public class Movement : MonoBehaviour
 			float smooth = (1 / (move.z * gravity)) * Time.deltaTime;
 			move = Vector3.Slerp(move, Vector3.zero , smooth);
 		}
+	}
+
+	public void slowSpeed()
+	{
+		move = move * speedPenalty;
 	}
 }

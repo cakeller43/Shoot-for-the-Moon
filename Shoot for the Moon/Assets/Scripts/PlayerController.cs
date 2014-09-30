@@ -6,7 +6,8 @@ public class PlayerController : MonoBehaviour
 	public float speed;
 	public float smooth;
 	public GameObject center;
-	
+	public int health;
+
 	private bool win = false;
 	
 	void FixedUpdate()
@@ -33,5 +34,15 @@ public class PlayerController : MonoBehaviour
 			rigidbody.velocity = Vector3.zero;
 			win = true;
 		}
+	}
+
+	public void decrementHealth()
+	{
+		health = health - 1;
+	}
+
+	public int getHealth()
+	{
+		return health;
 	}
 }
