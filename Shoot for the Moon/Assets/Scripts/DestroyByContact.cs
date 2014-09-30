@@ -17,7 +17,7 @@ public class DestroyByContact : MonoBehaviour
 			gameObject.SetActive(false);
 			other.gameObject.GetComponent<PlayerController>().decrementHealth();
 			movement.slowSpeed();
-			if(other.gameObject.GetComponent<PlayerController>().getHealth() == 0)
+			if(other.gameObject.GetComponent<PlayerController>().getHealth() <= 0)
 				other.gameObject.SetActive(false);
 				
 		}

@@ -5,8 +5,8 @@ public class PlayerController : MonoBehaviour
 {
 	public float speed;
 	public float smooth;
-	public GameObject center;
 	public int health;
+	public GameObject center;
 
 	private bool win = false;
 	
